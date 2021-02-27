@@ -17,16 +17,16 @@
             <div class="form-row">
                 <div class="col-md-6 mb-6">
                     <label for="validationCustom01">Nome</label>
-                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
-                    <div class="invalid-feedback">
+                    <input data-bind="value: firstName" type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
+                    <div data-bind="validationMessage: firstName" class="invalid-feedback">
                         O campo Nome é obrigatório!
                     </div>
                 </div>
                 <div class="col-md-6 mb-6">
                     <label for="validationCustom02">Sobrenome</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" value=""
+                    <input data-bind="value: lastName" type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" value=""
                         required>
-                    <div class="invalid-feedback">
+                    <div data-bind="validationMessage: lastName"class="invalid-feedback">
                         O campo Sobrenome é obrigatório!
                     </div>
                 </div>
@@ -34,16 +34,16 @@
             <div class="form-row">
                 <div class="col-md-2 mb-2">
                     <label for="validationCustom13">DDD</label>
-                    <input type="text" class="form-control" id="validationCustom13" placeholder="DDD" value="" required>
-                    <div class="invalid-feedback">
-                        O campo DD é obrigatório!
+                    <input data-bind="value: ddd" type="text" class="form-control" id="validationCustom13" placeholder="DDD" value="" required>
+                    <div data-bind="validationMessage: ddd" class="invalid-feedback">
+                        O campo DDD é obrigatório!
                     </div>
                 </div>
                 <div class="col-md-10 mb-10">
                     <label for="validationCustom03">Telefone</label>
-                    <input type="text" class="form-control" id="validationCustom03" placeholder="Telefone" value=""
+                    <input data-bind="value: numberFone" type="text" class="form-control" id="validationCustom03" placeholder="Telefone" value=""
                         required>
-                    <div class="invalid-feedback">
+                    <div data-bind="validationMessage: numberFone"class="invalid-feedback">
                         O campo Telefone é obrigatório!
                     </div>
                 </div>
@@ -51,21 +51,21 @@
             <div class="form-row">
                 <div class="col-md-8 mb-8">
                     <label for="validationCustom06">Cep</label>
-                    <input type="text" class="form-control" id="validationCustom06" placeholder="Cep" required>
-                    <div class="invalid-feedback">
+                    <input data-bind="value: cep, enable: travaCep" type="text" class="form-control" id="validationCustom06" placeholder="Cep" required>
+                    <div data-bind="validationMessage: cep"class="invalid-feedback">
                         O campo cep é obrigatório!
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <label for="validationCustom10" style="color:#fff">CEP</label>
-                    <a class="btn btn-primary form-control" style="color:#fff">Validar CEP</a>
+                    <a data-bind="click: testCep" class="btn btn-primary form-control" style="color:#fff">Validar CEP</a>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom09">Endereço</label>
-                    <input type="text" class="form-control" id="validationCustom09" placeholder="Endereço" required>
-                    <div class="invalid-feedback">
+                    <input data-bind="value: endereço, enable: travaEndereço" type="text" class="form-control" id="validationCustom09" placeholder="Endereço" required>
+                    <div data-bind="validationMessage: endereço " class="invalid-feedback">
                         O campo endereço é obrigatório!
                     </div>
                 </div>
@@ -73,8 +73,8 @@
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom08">Número da Residência</label>
-                    <input type="text" class="form-control" id="validationCustom08" placeholder="Numero" required>
-                    <div class="invalid-feedback">
+                    <input data-bind="value: nResidencia" type="text" class="form-control" id="validationCustom08" placeholder="Numero" required>
+                    <div data-bind="validationMessage: nResidencia" class="invalid-feedback">
                         O campo número da residência é obrigatório!
                     </div>
                 </div>
@@ -82,14 +82,14 @@
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom11">Complemento (opcional)</label>
-                    <input type="text" class="form-control" id="validationCustom011" placeholder="Complemento">
+                    <input data-bind="value: complemento" type="text" class="form-control" id="validationCustom011" placeholder="Complemento">
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom07">Bairro</label>
-                    <input type="text" class="form-control" id="validationCustom07" placeholder="Bairro" required>
-                    <div class="invalid-feedback">
+                    <input data-bind="value: bairro, enable: travaBairro"  type="text" class="form-control" id="validationCustom07" placeholder="Bairro" required>
+                    <div data-bind="validationMessage: bairro " class="invalid-feedback">
                         O campo bairro é obrigatório!
                     </div>
                 </div>
@@ -97,8 +97,8 @@
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom04">Cidade</label>
-                    <input type="text" class="form-control" id="validationCustom04" placeholder="Cidade" required>
-                    <div class="invalid-feedback">
+                    <input data-bind="value: cidade, enable: travaCidade" type="text" class="form-control" id="validationCustom04" placeholder="Cidade" required>
+                    <div data-bind="validationMessage: cidade" class="invalid-feedback ">
                         O campo cidade é obrigatório!
                     </div>
                 </div>
@@ -106,19 +106,20 @@
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom05">Estado</label>
-                    <input type="text" class="form-control" id="validationCustom05" placeholder="Estado" required>
-                    <div class="invalid-feedback">
+                    <input data-bind="value: estado, enable: travaEstado" type="text" class="form-control" id="validationCustom05" placeholder="Estado" required>
+                    <div data-bind="validationMessage: cidade"class="invalid-feedback">
                         O campo estado é obrigatório!
                     </div>
                 </div>
             </div>
             <br />
-            <button class="btn btn-primary" disabled type="submit">Enviar Formulário</button>
+            <button data-bind="click: enviaFormulario, enable:isValid()" id="botao" class="btn btn-primary" disabled type="submit">Enviar Formulário</button>
         </form>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout-validation/2.0.4/knockout.validation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </body>
 
 </html>

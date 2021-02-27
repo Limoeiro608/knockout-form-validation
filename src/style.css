@@ -1,3 +1,6 @@
 .container-icaro {
     margin:auto;
 }
+.validationMessage{
+    color: red;
+}
